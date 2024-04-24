@@ -1,4 +1,4 @@
-<script>
+
 document.addEventListener("DOMContentLoaded", function () {
     // Function to replace IDs and update anchor links
     function replaceAndScrollTo(elementId) {
@@ -30,4 +30,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-</script>
