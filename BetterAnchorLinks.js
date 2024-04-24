@@ -1,3 +1,4 @@
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     // Function to replace IDs and update anchor links
     function replaceAndScrollTo(elementId) {
@@ -6,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (targetElement) {
             // Remove the ID from the current target
             targetElement.removeAttribute("id");
-            
             // Create a new element with the new-target class
             var newTarget = document.createElement("div");
             newTarget.className = "anchor-offset";
@@ -30,3 +30,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+</script>
