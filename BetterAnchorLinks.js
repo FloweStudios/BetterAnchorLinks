@@ -1,4 +1,3 @@
-<script>
 document.addEventListener("DOMContentLoaded", function () {
     // Function to replace IDs and update anchor links
     function replaceAndScrollTo(elementId) {
@@ -7,12 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (targetElement) {
             // Remove the ID from the current target
             targetElement.removeAttribute("id");
+            
             // Create a new element with the new-target class
             var newTarget = document.createElement("div");
             newTarget.className = "anchor-offset";
             newTarget.id = elementId;
+
             // Append the new element to the parent of the old target
             targetElement.parentNode.insertBefore(newTarget, targetElement);
+
             // Scroll to the new target
             newTarget.scrollIntoView({ behavior: "smooth" });
         }
@@ -27,19 +29,4 @@ document.addEventListener("DOMContentLoaded", function () {
             replaceAndScrollTo(targetId);
         });
     });
-
-    // Add scroll event listener to update the active section
-    window.addEventListener("scroll", function () {
-        // Determine which section is currently at the top of the viewport
-        var sections = document.querySelectorAll("div[id^='section']");
-        var currentSection = null;
-
-        sections.forEach(function (section) {
-            var rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.top <= window.innerHeight) {
-                currentSection = section.id;
-            }
-        });
-    });
 });
-</script>
